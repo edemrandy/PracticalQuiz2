@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>A-FRAME TABLE SCENE</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+  </head>
+  <body>
+    <a-scene shadow="type: pcfsoft">
+      
+      <a-assets>
+        <canvas id="miloCanvas" width="256" height="256"></canvas>
+        <canvas id="milkCanvas" width="256" height="256"></canvas>
+      </a-assets>
+
+      <script>
+        const milo = document.getElementById('miloCanvas').getContext('2d');
+        milo.fillStyle = "#008542"; 
+        milo.fillRect(0, 0, 256, 256);
+        milo.fillStyle = "#FFD700"; 
+        milo.font = "bold 60px sans-serif";
+        milo.textAlign = "center";
+        milo.fillText("MILO", 128, 145);
+
+        const milk = document.getElementById('milkCanvas').getContext('2d');
+        milk.fillStyle = "#FFFFFF"; 
+        milk.fillRect(0, 0, 256, 256);
+        milk.fillStyle = "#0000FF"; 
+        milk.font = "bold 50px sans-serif";
+        milk.textAlign = "center";
+        milk.fillText("MILK", 128, 145);
+      </script>
+
+      <a-sky color="#4CC3FF"></a-sky>
+      <a-light type="ambient" color="#FFF" intensity="0.8"></a-light>
+      <a-light type="directional" color="#FFD700" intensity="1.2" position="2 4 3" castShadow="true"></a-light>
+      <a-plane rotation="-90 0 0" width="50" height="50" color="#F4A460" shadow="receive: true"></a-plane>
+
+      <a-entity position="0 0 -4">
+        <a-cylinder position="-2.2 1.5 -1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
+        <a-cylinder position="2.2 1.5 -1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
+        <a-cylinder position="-2.2 1.5 1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
+        <a-cylinder position="2.2 1.5 1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
+        
+        <a-cone position="0 3.8 0" radius-bottom="3.8" radius-top="0.1" height="1.8" color="#D2B48C" material="roughness: 1"></a-cone>
+        <a-box position="0 3 0" width="4.6" height="0.15" depth="3.6" color="#3E2723"></a-box>
+      </a-entity>
+
+      <a-entity position="0 0 -4" shadow="cast: true; receive: true">
+        <a-box position="0 0.8 0" width="2.2" height="0.1" depth="1.3" color="#FF007F"></a-box> 
+        
+        <a-cylinder position="-0.9 0.4 -0.5" radius="0.05" height="0.8" color="#212121"></a-cylinder>
+        <a-cylinder position="0.9 0.4 -0.5" radius="0.05" height="0.8" color="#212121"></a-cylinder>
+        <a-cylinder position="-0.9 0.4 0.5" radius="0.05" height="0.8" color="#212121"></a-cylinder>
+        <a-cylinder position="0.9 0.4 0.5" radius="0.05" height="0.8" color="#212121"></a-cylinder>
+
+        <a-cylinder position="-0.4 1 0" radius="0.12" height="0.35" material="src: #miloCanvas"></a-cylinder>
+        <a-cylinder position="0.1 0.98 0.2" radius="0.1" height="0.25" material="src: #milkCanvas"></a-cylinder>
+        
+        <a-entity position="-0.7 0.9 0.4">
+            <a-cylinder radius="0.07" height="0.18" color="#00FFFF"></a-cylinder>
+            <a-torus position="0.07 0 0" radius="0.04" radius-tubular="0.008" arc="180" rotation="0 90 0" color="#00FFFF"></a-torus>
+        </a-entity>
+
+        <a-entity position="0.7 0.9 0.4">
+            <a-cylinder radius="0.07" height="0.18" color="#FFFF00"></a-cylinder>
+            <a-torus position="0.07 0 0" radius="0.04" radius-tubular="0.008" arc="180" rotation="0 90 0" color="#FFFF00"></a-torus>
+        </a-entity>
+      </a-entity>
+
+      <a-entity position="-1.5 0 -4" rotation="0 90 0">
+        <a-box position="0 0.45 0" width="0.6" height="0.1" depth="0.6" color="#FF9800"></a-box> <a-box position="-0.25 0.9 0" width="0.08" height="0.8" depth="0.6" color="#FF9800"></a-box> <a-cylinder position="0.22 0.22 0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+        <a-cylinder position="0.22 0.22 -0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+        <a-cylinder position="-0.22 0.22 0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+        <a-cylinder position="-0.22 0.22 -0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+      </a-entity>
+
+      <a-entity position="1.5 0 -4" rotation="0 -90 0">
+        <a-box position="0 0.45 0" width="0.6" height="0.1" depth="0.6" color="#FF9800"></a-box> <a-box position="-0.25 0.9 0" width="0.08" height="0.8" depth="0.6" color="#FF9800"></a-box> <a-cylinder position="0.22 0.22 0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+        <a-cylinder position="0.22 0.22 -0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+        <a-cylinder position="-0.22 0.22 0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+        <a-cylinder position="-0.22 0.22 -0.22" radius="0.03" height="0.45" color="#333"></a-cylinder>
+      </a-entity>
+
+      <a-sphere position="3 0.4 -2" radius="0.4" color="#FF3333" shadow></a-sphere> <a-cylinder position="-3 0.5 -1" radius="0.3" height="1" color="#228B22"></a-cylinder> <a-entity position="0 1.6 2.5">
+        <a-camera look-controls></a-camera>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
