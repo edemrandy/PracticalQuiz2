@@ -249,78 +249,74 @@
       <!-- ===================== END PAVILION ===================== -->
 
 
-      <!-- ===================== TABLE (inside pavilion) ===================== -->
+      <!-- ===================== TABLE (inside pavilion) - compact for 2 chairs ===================== -->
       <a-entity position="0 0 -4">
-        <a-cylinder position="-2.2 1.5 -1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
-        <a-cylinder position="2.2 1.5 -1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
-        <a-cylinder position="-2.2 1.5 1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
-        <a-cylinder position="2.2 1.5 1.7" radius="0.12" height="3" color="#5D4037"></a-cylinder>
-        <a-box position="0 3 0" width="4.6" height="0.15" depth="3.6" color="#3E2723" shadow="cast: true; receive: true"></a-box>
+        <!-- 4 table legs -->
+        <a-cylinder position="-0.8 0.4 -0.5" radius="0.05" height="0.8" color="#5D4037"></a-cylinder>
+        <a-cylinder position="0.8 0.4 -0.5" radius="0.05" height="0.8" color="#5D4037"></a-cylinder>
+        <a-cylinder position="-0.8 0.4 0.5" radius="0.05" height="0.8" color="#5D4037"></a-cylinder>
+        <a-cylinder position="0.8 0.4 0.5" radius="0.05" height="0.8" color="#5D4037"></a-cylinder>
+        <!-- Tabletop -->
+        <a-box position="0 0.83 0" width="1.8" height="0.08" depth="1.2" color="#3E2723" shadow="cast: true; receive: true"></a-box>
 
-        <!-- TABLE ITEMS -->
-        <!-- Milo Can -->
-        <a-cylinder position="-0.4 3.25 0" radius="0.12" height="0.35" material="src: #miloCanvas"></a-cylinder>
-        <!-- Milk carton -->
-        <a-cylinder position="0.1 3.23 0.2" radius="0.1" height="0.25" material="src: #milkCanvas"></a-cylinder>
-        
-        <!-- Cyan mug -->
-        <a-entity position="-0.7 3.18 0.4">
-          <a-cylinder radius="0.07" height="0.18" color="#00BFBF"></a-cylinder>
+        <!-- TABLE ITEMS on top (tabletop surface = y: 0.87) -->
+
+        <!-- Milo Can - left side -->
+        <a-cylinder position="-0.35 0.99 -0.1" radius="0.09" height="0.23" material="src: #miloCanvas"></a-cylinder>
+
+        <!-- Milk carton - right side -->
+        <a-cylinder position="0.35 0.99 -0.1" radius="0.08" height="0.22" material="src: #milkCanvas"></a-cylinder>
+
+        <!-- Cyan mug - front left (for left-chair person) -->
+        <a-entity position="-0.45 0.96 0.28">
+          <a-cylinder radius="0.07" height="0.16" color="#00BFBF"></a-cylinder>
           <a-torus position="0.07 0 0" radius="0.04" radius-tubular="0.008" arc="180" rotation="0 90 0" color="#00BFBF"></a-torus>
         </a-entity>
-        <!-- Yellow mug -->
-        <a-entity position="0.7 3.18 0.4">
-          <a-cylinder radius="0.07" height="0.18" color="#F4C430"></a-cylinder>
-          <a-torus position="0.07 0 0" radius="0.04" radius-tubular="0.008" arc="180" rotation="0 90 0" color="#F4C430"></a-torus>
+
+        <!-- Yellow mug - front right (for right-chair person) -->
+        <a-entity position="0.45 0.96 0.28">
+          <a-cylinder radius="0.07" height="0.16" color="#F4C430"></a-cylinder>
+          <a-torus position="-0.07 0 0" radius="0.04" radius-tubular="0.008" arc="180" rotation="0 90 0" color="#F4C430"></a-torus>
         </a-entity>
 
-        <!-- Small plate with biscuits -->
-        <a-cylinder position="0.5 3.1 -0.3" radius="0.16" height="0.025" color="#F5F5DC"></a-cylinder>
-        <a-cylinder position="0.45 3.13 -0.28" radius="0.06" height="0.025" color="#D2A679"></a-cylinder>
-        <a-cylinder position="0.58 3.13 -0.22" radius="0.06" height="0.025" color="#D2A679"></a-cylinder>
-        <a-cylinder position="0.5 3.13 -0.38" radius="0.06" height="0.025" color="#D2A679"></a-cylinder>
+        <!-- Small plate with biscuits - centre -->
+        <a-cylinder position="0 0.88 0.1" radius="0.14" height="0.02" color="#F5F5DC"></a-cylinder>
+        <a-cylinder position="-0.05 0.9 0.08" radius="0.05" height="0.02" color="#D2A679"></a-cylinder>
+        <a-cylinder position="0.06 0.9 0.14" radius="0.05" height="0.02" color="#D2A679"></a-cylinder>
+        <a-cylinder position="0 0.9 0.16" radius="0.05" height="0.02" color="#D2A679"></a-cylinder>
 
-        <!-- Small vase with flower on table -->
-        <a-cylinder position="-0.5 3.14 -0.3" radius="0.04" height="0.18" color="#4A90E2"></a-cylinder>
-        <a-sphere position="-0.5 3.35 -0.3" radius="0.08" color="#FF69B4" flutter></a-sphere>
+        <!-- Small vase with flower - back centre -->
+        <a-cylinder position="0 0.9 -0.3" radius="0.035" height="0.14" color="#4A90E2"></a-cylinder>
+        <a-sphere position="0 1.01 -0.3" radius="0.07" color="#FF69B4" flutter></a-sphere>
 
       </a-entity>
 
       <!-- ===================== CHAIRS (inside pavilion) ===================== -->
-      <!-- Chair LEFT -->
-      <a-entity position="-1.5 0 -4" rotation="0 90 0">
-        <a-box position="0 0.45 0" width="0.6" height="0.1" depth="0.6" color="#FF9800"></a-box>
-        <a-box position="-0.25 0.9 0" width="0.08" height="0.8" depth="0.6" color="#FF9800"></a-box>
-        <a-cylinder position="0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <a-cylinder position="0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <a-cylinder position="-0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <a-cylinder position="-0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <!-- Cushion -->
-        <a-box position="0 0.52 0" width="0.55" height="0.06" depth="0.55" color="#E64A19"></a-box>
-      </a-entity>
-
-      <!-- Chair RIGHT -->
-      <a-entity position="1.5 0 -4" rotation="0 -90 0">
-        <a-box position="0 0.45 0" width="0.6" height="0.1" depth="0.6" color="#FF9800"></a-box>
-        <a-box position="-0.25 0.9 0" width="0.08" height="0.8" depth="0.6" color="#FF9800"></a-box>
-        <a-cylinder position="0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <a-cylinder position="0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <a-cylinder position="-0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <a-cylinder position="-0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
-        <!-- Cushion -->
-        <a-box position="0 0.52 0" width="0.55" height="0.06" depth="0.55" color="#E64A19"></a-box>
-      </a-entity>
-
-      <!-- Extra chair at back of table -->
-      <a-entity position="0 0 -7" rotation="0 0 0">
+      <!-- Chair LEFT - faces right (toward table) -->
+      <a-entity position="-1.3 0 -4" rotation="0 90 0">
         <a-box position="0 0.45 0" width="0.6" height="0.1" depth="0.6" color="#FF9800"></a-box>
         <a-box position="0 0.9 -0.25" width="0.6" height="0.8" depth="0.08" color="#FF9800"></a-box>
         <a-cylinder position="0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
         <a-cylinder position="0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
         <a-cylinder position="-0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
         <a-cylinder position="-0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
+        <!-- Cushion -->
         <a-box position="0 0.52 0" width="0.55" height="0.06" depth="0.55" color="#E64A19"></a-box>
       </a-entity>
+
+      <!-- Chair RIGHT - faces left (toward table) -->
+      <a-entity position="1.3 0 -4" rotation="0 -90 0">
+        <a-box position="0 0.45 0" width="0.6" height="0.1" depth="0.6" color="#FF9800"></a-box>
+        <a-box position="0 0.9 -0.25" width="0.6" height="0.8" depth="0.08" color="#FF9800"></a-box>
+        <a-cylinder position="0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
+        <a-cylinder position="0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
+        <a-cylinder position="-0.22 0.22 0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
+        <a-cylinder position="-0.22 0.22 -0.22" radius="0.03" height="0.45" color="#555"></a-cylinder>
+        <!-- Cushion -->
+        <a-box position="0 0.52 0" width="0.55" height="0.06" depth="0.55" color="#E64A19"></a-box>
+      </a-entity>
+
+
 
       <!-- ===================== FLOWER BEDS AROUND PAVILION ===================== -->
 
